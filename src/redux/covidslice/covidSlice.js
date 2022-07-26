@@ -21,8 +21,22 @@ const covidSlice = createSlice({
     initialState,
     extraReducers: {
         [fetchCovidData.fulfilled]: (state, action) => {
-            state.isLoading = false;
-            state.items = action.payload;
+            // state.isLoading = false;
+            // state.items = action.payload;
+            const coronas = (action.payload).map((key) =>({
+                id: key.ALL.country,
+                country: key.ALL.country,
+                population: key.ALL.population,
+                confirmed: key.ALL.confirmed,
+                recovered: key.ALL.recovered,
+                deaths: key.ALL.deaths,
+                population: key.ALL.population,
+                continent: key.ALL.continent,
+                capital: key.ALL.capital_city,
+                lat: key.ALL.lat,
+                lon: key.ALL.lon,
+                updated: key.ALL.updated,
+            }));
         },
         [fetchCovidData.pending]: (state) => {state.isLoading = true;},
         [fetchCovidData.rejected]: (state) => {state.isFailed = true;},

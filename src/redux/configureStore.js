@@ -2,7 +2,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import covidSlice from "./covidslice/covidSlice";
 
 const reducer = {
-    covid: covidSlice.reducer,
+    items: covidSlice,
 };
 
 const store = configureStore({reducer});
