@@ -21,26 +21,27 @@ const covidSlice = createSlice({
     initialState,
     extraReducers: {
         [fetchCovidData.fulfilled]: (state, action) => {
+            let itemArray = [];
             // state.isLoading = false;
             // state.items = action.payload;
-            const coronas = (action.payload).map((key) =>({
-                id: key.All.country,
-                country: key.All.country,
-                population: key.All.population,
-                confirmed: key.All.confirmed,
-                recovered: key.All.recovered,
-                deaths: key.All.deaths,
-                population: key.All.population,
-                continent: key.All.continent,
-                capital: key.All.capital_city,
-                lat: key.All.lat,
-                lon: key.All.lon,
-                updated: key.All.updated,
-            }));
+            const coronas = action.payload;
+            for (let key in coronas) {
+                itemArray.push({
+                    id: key,
+                    country: coronas[key].All.country,
+                    population: coronas[key].All.population,
+                    confirmed: coronas[key].All.confirmed,
+                    recovered: coronas[key].All.recovered,
+                    deaths: coronas[key].All.deaths,
+                    continent: coronas[key].All.continent,
+                    capitalCity: coronas[key].All.capital_city,
+                    updated: coronas[key].All.updated,
+                });
+            };
             const theState = state;
             theState.isLoading = false;
             theState.isFailed = false;
-            theState.items = coronas;
+            theState.items = itemArray;
 
         },
         [fetchCovidData.pending]: (state) => {state.isLoading = true;},
