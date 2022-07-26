@@ -24,19 +24,24 @@ const covidSlice = createSlice({
             // state.isLoading = false;
             // state.items = action.payload;
             const coronas = (action.payload).map((key) =>({
-                id: key.ALL.country,
-                country: key.ALL.country,
-                population: key.ALL.population,
-                confirmed: key.ALL.confirmed,
-                recovered: key.ALL.recovered,
-                deaths: key.ALL.deaths,
-                population: key.ALL.population,
-                continent: key.ALL.continent,
-                capital: key.ALL.capital_city,
-                lat: key.ALL.lat,
-                lon: key.ALL.lon,
-                updated: key.ALL.updated,
+                id: key.All.country,
+                country: key.All.country,
+                population: key.All.population,
+                confirmed: key.All.confirmed,
+                recovered: key.All.recovered,
+                deaths: key.All.deaths,
+                population: key.All.population,
+                continent: key.All.continent,
+                capital: key.All.capital_city,
+                lat: key.All.lat,
+                lon: key.All.lon,
+                updated: key.All.updated,
             }));
+            const theState = state;
+            theState.isLoading = false;
+            theState.isFailed = false;
+            theState.items = coronas;
+
         },
         [fetchCovidData.pending]: (state) => {state.isLoading = true;},
         [fetchCovidData.rejected]: (state) => {state.isFailed = true;},
