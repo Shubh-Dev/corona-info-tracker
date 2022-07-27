@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { generate } from 'randomized-string';
@@ -7,6 +7,8 @@ import Covid from './Covid';
 import './CovidList.css';
 
 const CovidList = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchCovidData());
@@ -18,15 +20,26 @@ const CovidList = () => {
     <div>
       <header className="header">
         <h1>Covid 19 data</h1>
-        <input className="searchbar" type="searchbar" placeholder="Search.." />
+        <input
+          className="searchbar"
+          type="searchbar"
+          placeholder="Search.."
+          onChange={(event) => { setSearchTerm(event.target.value); }}
+        />
       </header>
       <div className="main-container">
-        {{items}.isFailed? <div>Failed to load data</div> : {items}.isLoading? <div>Loading...</div> :
-        items.map(({
-          id, country, flag, cases, deaths,
-          population,
-          continent,
-        }) => (
+        {{ items }.isFailed ? <div>Failed to load data</div> : { items }.isLoading ? <div>Loading...</div>
+          : items.filter((val) => {
+            if (searchTerm === '') {
+              return val;
+            } if (val.country.toLowerCase().includes(searchTerm.toLowerCase())) {
+              return val;
+            }
+          }).map(({
+            id, country, flag, cases, deaths,
+            population,
+            continent,
+          }) => (
             <Covid
               key={id}
               country={country}
@@ -36,7 +49,7 @@ const CovidList = () => {
               population={population}
               continent={continent}
             />
-        ))}
+          ))}
       </div>
     </div>
   );

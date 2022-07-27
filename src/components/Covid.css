@@ -4,5 +4,21 @@
 
 .card-container {
     padding: 20px;
-    align-items: center;
+    border: 1px red dashed;
+}
+
+.country-and-arrow {
+    display: flex;
+    align-items: flex-start;
+}
+
+.arrow {
+    margin-left: 9rem;
+    margin-top: 1.5rem;
+    cursor: pointer;
+}
+
+.country-name {
+    max-width: 100px;
+    width: auto;
 }

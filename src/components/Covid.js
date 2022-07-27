@@ -2,9 +2,9 @@ import React from 'react';
 import './Covid.css';
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchCovidData } from '../redux/covidslice/covidSlice';
 import { generate } from 'randomized-string';
-
+import { AiOutlineArrowRight } from 'react-icons/ai';
+import { fetchCovidData } from '../redux/covidslice/covidSlice';
 
 const Covid = (props) => {
   const {
@@ -12,14 +12,16 @@ const Covid = (props) => {
   } = props;
   const dispatch = useDispatch();
   const handleClick = () => {
-    dispatch()
+    console.log('clicked');
   };
 
   return (
     <div key={id} className="card-container">
-      <button className="show-btn" type="button" onClick={handleClick}>Show Details</button>
       <div className="card">
-        <h2>{country}</h2>
+        <div className="country-and-arrow">
+          <h2 className="country-name">{country}</h2>
+          <AiOutlineArrowRight className="arrow" onClick={handleClick} />
+        </div>
         <img className="flag" src={flag} alt="Flag" />
         <p>
           Country:
