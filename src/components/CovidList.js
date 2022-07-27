@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-// import { generate } from 'randomized-string';
+import { generate } from 'randomized-string';
 import { fetchCovidData } from '../redux/covidslice/covidSlice';
 import Covid from './Covid';
 import './CovidList.css';
@@ -20,14 +20,15 @@ const CovidList = () => {
         <h1>Covid 19 data</h1>
         <input className="searchbar" type="searchbar" placeholder="Search.." />
       </header>
-      <div className="main-container" items={items}>
-        {items.map(({
+      <div className="main-container">
+        {{items}.isFailed? <div>Failed to load data</div> : {items}.isLoading? <div>Loading...</div> :
+        items.map(({
           id, country, flag, cases, deaths,
           population,
           continent,
         }) => (
-          <div key={id}>
             <Covid
+              key={id}
               country={country}
               flag={flag}
               cases={cases}
@@ -35,7 +36,6 @@ const CovidList = () => {
               population={population}
               continent={continent}
             />
-          </div>
         ))}
       </div>
     </div>
@@ -43,6 +43,7 @@ const CovidList = () => {
 };
 
 CovidList.prototype = {
+  id: PropTypes.string.isRequired,
   country: PropTypes.string.isRequired,
   flag: PropTypes.string.isRequired,
   cases: PropTypes.number.isRequired,

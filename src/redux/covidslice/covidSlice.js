@@ -22,7 +22,7 @@ const covidSlice = createSlice({
     [fetchCovidData.fulfilled]: (state, action) => {
       const coronas = action.payload;
       const corona = coronas.map((key) => ({
-        id: key.countryInfo._id,
+        id: key.country,
         country: key.country,
         flag: key.countryInfo.flag,
         cases: key.cases,
