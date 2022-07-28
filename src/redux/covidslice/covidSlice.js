@@ -46,8 +46,6 @@ const covidSlice = createSlice({
       theState.isFailed = false;
       theState.items = corona;
     },
-    [fetchCovidData.pending]: (state) => { state.isLoading = true; },
-    [fetchCovidData.rejected]: (state) => { state.isFailed = true; },
   },
 });
 

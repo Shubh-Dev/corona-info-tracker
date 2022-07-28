@@ -1,16 +1,20 @@
 import React from 'react';
-import { Provider } from 'react-redux';
-import store from './redux/configureStore';
+import { Routes, Route } from 'react-router-dom';
 import CovidList from './components/CovidList';
-// import CovidDetails from './components/CovidDetails';
+import CovidDetails from './components/CovidDetails';
 
 import './App.css';
 
 function App() {
   return (
-    <Provider store={store}>
-      <CovidList />
-    </Provider>
+    <>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<CovidList />} />
+          <Route path="/covidDetails/:key" element={<CovidDetails />} />
+        </Routes>
+      </div>
+    </>
   );
 }
 

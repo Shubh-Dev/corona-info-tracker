@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-import { generate } from 'randomized-string';
+// import { generate } from 'randomized-string';
 import { fetchCovidData } from '../redux/covidslice/covidSlice';
 import Covid from './Covid';
 import './CovidList.css';
@@ -16,6 +16,7 @@ const CovidList = () => {
 
   const { items } = useSelector((state) => state.items);
 
+  /* eslint-disable */
   return (
     <div>
       <header className="header">
@@ -28,28 +29,22 @@ const CovidList = () => {
         />
       </header>
       <div className="main-container">
-        {{ items }.isFailed ? <div>Failed to load data</div> : { items }.isLoading ? <div>Loading...</div>
-          : items.filter((val) => {
-            if (searchTerm === '') {
-              return val;
-            } if (val.country.toLowerCase().includes(searchTerm.toLowerCase())) {
-              return val;
-            }
-          }).map(({
-            id, country, flag, cases, deaths,
-            population,
-            continent,
-          }) => (
-            <Covid
-              key={id}
-              country={country}
-              flag={flag}
-              cases={cases}
-              deaths={deaths}
-              population={population}
-              continent={continent}
-            />
-          ))}
+        {items.filter((val) => {
+          if (searchTerm === '') {
+            return val;
+          } if (val.country.toLowerCase().includes(searchTerm.toLowerCase())) {
+            return val;
+          }
+        }).map(({
+          id, country, flag, cases,
+        }) => (
+          <Covid
+            key={id}
+            country={country}
+            flag={flag}
+            cases={cases}
+          />
+        ))}
       </div>
     </div>
   );
@@ -60,19 +55,6 @@ CovidList.prototype = {
   country: PropTypes.string.isRequired,
   flag: PropTypes.string.isRequired,
   cases: PropTypes.number.isRequired,
-  todayCases: PropTypes.number.isRequired,
-  deaths: PropTypes.number.isRequired,
-  todayDeaths: PropTypes.number.isRequired,
-  recovered: PropTypes.number.isRequired,
-  active: PropTypes.number.isRequired,
-  critical: PropTypes.number.isRequired,
-  population: PropTypes.number.isRequired,
-  continent: PropTypes.string.isRequired,
-  casesPerOneMillion: PropTypes.number.isRequired,
-  deathsPerOneMillion: PropTypes.number.isRequired,
-  tests: PropTypes.number.isRequired,
-  testsPerOneMillion: PropTypes.number.isRequired,
-  updated: PropTypes.string.isRequired,
 };
 
 export default CovidList;
