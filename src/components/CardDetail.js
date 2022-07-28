@@ -12,6 +12,7 @@ const CardDetail = (props) => {
 
   return (
     <div key={id} className="main-card-details-container">
+      { console.log('card-test', { id })}
       <div className="back-btn">
         <NavLink to="/"><BsArrowLeftCircle className="back-btn" /></NavLink>
       </div>

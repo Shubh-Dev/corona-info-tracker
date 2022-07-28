@@ -10,12 +10,16 @@ const Covid = (props) => {
     id, country, cases, flag,
   } = props;
   return (
+
     <div key={id} className="card-container">
+      {/* {console.log('test', { id })} */}
       <div className="card">
         <div className="country-and-arrow">
-          <h2 className="country-name">{country}</h2>
-          <NavLink to={`/covidDetails/${id}`}>
-            <BiRightArrowCircle className="arrow" />
+          <div className="country-name-holder">
+            <h2 className="country-name">{country}</h2>
+          </div>
+          <NavLink to="/covidDetails/">
+            <BiRightArrowCircle className="arrow" key={id} />
           </NavLink>
           {/* <AiOutlineArrowRight className="arrow" /> */}
         </div>

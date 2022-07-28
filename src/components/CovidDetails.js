@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { generate } from 'randomized-string';
 import { fetchCovidData } from '../redux/covidslice/covidSlice';
 import CardDetail from './CardDetail';
 
@@ -14,11 +15,12 @@ const CovidDetails = () => {
   return (
     <div className="detail-container">
       {items.map(({
-        id, country, flag, population, cases, deaths, continent,
+        country, flag, population, cases, deaths, continent,
         todaysCases, todayDeaths, tests, updated, active, recovered,
       }) => (
         <CardDetail
-          key={id}
+          key={generate()}
+          id={generate()}
           country={country}
           flag={flag}
           population={population}

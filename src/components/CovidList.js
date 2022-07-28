@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-// import { generate } from 'randomized-string';
+import { generate } from 'randomized-string';
 import { fetchCovidData } from '../redux/covidslice/covidSlice';
 import Covid from './Covid';
 import './CovidList.css';
@@ -35,10 +35,11 @@ const CovidList = () => {
             return val;
           }
         }).map(({
-          id, country, flag, cases,
+           country, flag, cases,
         }) => (
           <Covid
-            key={id}
+            key={generate()}
+            id={generate()}
             country={country}
             flag={flag}
             cases={cases}
@@ -48,12 +49,5 @@ const CovidList = () => {
     </div>
   );
 };
-
-// CovidList.prototype = {
-//   id: PropTypes.string.isRequired,
-//   country: PropTypes.string.isRequired,
-//   flag: PropTypes.string.isRequired,
-//   cases: PropTypes.number.isRequired,
-// };
 
 export default CovidList;

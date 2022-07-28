@@ -11,7 +11,8 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/" element={<CovidList />} />
-          <Route path="/covidDetails/:key" element={<CovidDetails />} />
+          <Route path="/covidDetails/" element={<CovidDetails />} />
+          {/* <Route path="/covidDetails/:{key}" element={<CovidDetails />} /> */}
         </Routes>
       </div>
     </>
