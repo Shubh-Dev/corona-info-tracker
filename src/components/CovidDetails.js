@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchCovidData } from '../redux/covidslice/covidSlice';
 import CardDetail from './CardDetail';
-import PropTypes from 'prop-types';
 
 const CovidDetails = () => {
   const dispatch = useDispatch();
@@ -15,7 +14,8 @@ const CovidDetails = () => {
   return (
     <div className="detail-container">
       {items.map(({
-        id, country, flag, population, cases, deaths, continent, todaysCases, todayDeaths, tests, updated,
+        id, country, flag, population, cases, deaths, continent,
+        todaysCases, todayDeaths, tests, updated, active, recovered,
       }) => (
         <CardDetail
           key={id}
@@ -29,25 +29,12 @@ const CovidDetails = () => {
           todayDeaths={todayDeaths}
           tests={tests}
           updated={updated}
+          active={active}
+          recovered={recovered}
         />
       ))}
     </div>
   );
-};
-
-CovidDetails.propTypes = {
-  id: PropTypes.string.isRequired,
-  country: PropTypes.string.isRequired,
-  flag: PropTypes.string.isRequired,
-  population: PropTypes.number.isRequired,
-  cases: PropTypes.number.isRequired,
-  deaths: PropTypes.number.isRequired,
-  continent: PropTypes.string.isRequired,
-  todaysCases: PropTypes.number.isRequired,
-  todayDeaths: PropTypes.number.isRequired,
-  tests: PropTypes.number.isRequired,
-  updated: PropTypes.number.isRequired,
-
 };
 
 export default CovidDetails;

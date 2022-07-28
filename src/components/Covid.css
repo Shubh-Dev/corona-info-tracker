@@ -1,24 +1,27 @@
 .flag {
-    border: 1px solid rgb(9, 1, 1)
+  border: 1px solid rgb(9, 1, 1);
+  width: 45vw;
+  height: 120px;
 }
 
 .card-container {
-    padding: 20px;
-    border: 1px red dashed;
+  padding: 10px;
+  height: 20rem;
 }
 
 .country-and-arrow {
-    display: flex;
-    align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
 }
 
 .arrow {
-    margin-left: 9rem;
-    margin-top: 1.5rem;
-    cursor: pointer;
+  margin-top: 1.6rem;
+  cursor: pointer;
+  width: 1.3rem;
+  height: auto;
 }
 
 .country-name {
-    max-width: 100px;
-    width: auto;
+  max-width: 100px;
+  width: auto;
 }

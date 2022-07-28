@@ -6,7 +6,8 @@ import PropTypes from 'prop-types';
 
 const CardDetail = (props) => {
   const {
-    id, country, flag, population, cases, deaths, continent, todaysCases, todayDeaths, tests, updated,
+    id, country, flag, population, cases, deaths, continent,
+    todayDeaths, tests, recovered, active,
   } = props;
 
   return (
@@ -18,8 +19,8 @@ const CardDetail = (props) => {
         <div className="head">
           <img className="card-img" src={flag} alt={country} />
           <div>
-            <h2 className="card-title">{country}</h2>
-            <h4>
+            <h2 className="card-title color-white">{country}</h2>
+            <h4 className="color-white">
               {cases}
               {' '}
               Cases
@@ -62,15 +63,15 @@ const CardDetail = (props) => {
           <div className="body-left">
             <h4 className="description">
               <span>
-                Today's Cases:
+                active:
               </span>
-              {todaysCases}
+              {active}
             </h4>
           </div>
           <div className="body-left">
             <h4 className="description">
               <span>
-                today's Deaths:
+                today&apos;s Deaths:
               </span>
               {todayDeaths}
             </h4>
@@ -82,12 +83,14 @@ const CardDetail = (props) => {
               </span>
               {tests}
             </h4>
+          </div>
+          <div>
             <div className="body-left">
               <h4 className="description">
                 <span>
-                  Last Updated:
+                  Recovered:
                 </span>
-                {updated}
+                {recovered}
               </h4>
             </div>
           </div>
@@ -98,7 +101,7 @@ const CardDetail = (props) => {
   );
 };
 
-CardDetail.PropTypes = {
+CardDetail.propTypes = {
   id: PropTypes.string.isRequired,
   country: PropTypes.string.isRequired,
   flag: PropTypes.string.isRequired,
@@ -106,10 +109,10 @@ CardDetail.PropTypes = {
   cases: PropTypes.number.isRequired,
   deaths: PropTypes.number.isRequired,
   continent: PropTypes.string.isRequired,
-  todaysCases: PropTypes.number.isRequired,
+  active: PropTypes.number.isRequired,
   todayDeaths: PropTypes.number.isRequired,
   tests: PropTypes.number.isRequired,
-  updated: PropTypes.number.isRequired,
+  recovered: PropTypes.number.isRequired,
 };
 
 export default CardDetail;

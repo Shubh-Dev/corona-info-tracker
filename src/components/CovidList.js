@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import PropTypes from 'prop-types';
 // import { generate } from 'randomized-string';
 import { fetchCovidData } from '../redux/covidslice/covidSlice';
 import Covid from './Covid';
@@ -18,13 +17,13 @@ const CovidList = () => {
 
   /* eslint-disable */
   return (
-    <div>
+    <div className="container">
       <header className="header">
-        <h1>Covid 19 data</h1>
+        <h1 className="main-headline">Covid 19 Statistics</h1>
         <input
           className="searchbar"
           type="searchbar"
-          placeholder="Search.."
+          placeholder="Search by countyr name.."
           onChange={(event) => { setSearchTerm(event.target.value); }}
         />
       </header>
@@ -50,11 +49,11 @@ const CovidList = () => {
   );
 };
 
-CovidList.prototype = {
-  id: PropTypes.string.isRequired,
-  country: PropTypes.string.isRequired,
-  flag: PropTypes.string.isRequired,
-  cases: PropTypes.number.isRequired,
-};
+// CovidList.prototype = {
+//   id: PropTypes.string.isRequired,
+//   country: PropTypes.string.isRequired,
+//   flag: PropTypes.string.isRequired,
+//   cases: PropTypes.number.isRequired,
+// };
 
 export default CovidList;

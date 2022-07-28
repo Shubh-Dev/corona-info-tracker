@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import './Covid.css';
 import PropTypes from 'prop-types';
 // import { generate } from 'randomized-string';
-import { AiOutlineArrowRight } from 'react-icons/ai';
+import { BiRightArrowCircle } from 'react-icons/bi';
 
 const Covid = (props) => {
   const {
@@ -15,17 +15,19 @@ const Covid = (props) => {
         <div className="country-and-arrow">
           <h2 className="country-name">{country}</h2>
           <NavLink to={`/covidDetails/${id}`}>
-            <AiOutlineArrowRight className="arrow" />
+            <BiRightArrowCircle className="arrow" />
           </NavLink>
           {/* <AiOutlineArrowRight className="arrow" /> */}
         </div>
         <img className="flag" src={flag} alt="Flag" />
         <p>
           Country:
+          {' '}
           {country}
         </p>
         <p>
           Cases:
+          {' '}
           {cases}
         </p>
       </div>
