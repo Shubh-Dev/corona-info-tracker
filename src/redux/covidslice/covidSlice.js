@@ -18,12 +18,24 @@ export const fetchCovidData = createAsyncThunk(
 const covidSlice = createSlice({
   name: 'items',
   initialState,
+  reducer: {
+    DETAIL_PAGE(state, action) {
+      const newState = state.items.map((item) => {
+        if (item.country === action.payload.country) {
+          return action.payload;
+        }
+        return item;
+      });
+      const theState = state;
+      theState.items = newState;
+    },
+  },
   extraReducers: {
     [fetchCovidData.fulfilled]: (state, action) => {
       const coronas = action.payload;
       const corona = coronas.map((key) => ({
         /* eslint-disable-next-line */
-        id: key.countryInfo._id,
+        id: key.country,
         country: key.country,
         flag: key.countryInfo.flag,
         cases: key.cases,
@@ -49,5 +61,6 @@ const covidSlice = createSlice({
     },
   },
 });
+export const { DETAIL_PAGE } = covidSlice.actions;
 
 export default covidSlice.reducer;

@@ -1,70 +1,107 @@
-# Getting Started with Create React App
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Covid-19 Tracker
 
-## Available Scripts
+This is react app that allows users to get get information of Covid-19 disease from all over the world .
 
-In the project directory, you can run:
+### Deploy
 
-### `npm start`
+[Link]()
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<!-- ![screenshot](./desktop.png) -->
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Built With
 
-### `npm test`
+- React
+- Redux
+- Css3
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting Started
+To get a local copy up and running follow these simple example steps.
 
-### `npm run build`
+## Prerequisites
+- Have a good knowledge on how to parse UI designs
+- Have VSCode or other text editor installed. [Link to download VSCode](https://code.visualstudio.com/download)
+- Install node package. [Link to download node](https://nodejs.org/en/download/)
+- Have git installed.[Link to download git](https://git-scm.com/downloads)
+- Create a github repository.
+- create new react app [Check this link to learn how](https://reactjs.org/docs/create-a-new-react-app.html)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Setup
+```javascript
+ git clone git@github.com:assadounto/react-capstone.git
+ cd awesome-books 
+ npm install 
+ npm start 
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+-Follow the HTML-CSS linter confuguration to docs to setup linters [Link to Microverse linter docs](https://github.com/microverseinc/linters-config)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Run tests
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+For tracking linters errors locally, you need to follow these steps:
+- For tracking linter errors in HTML file run:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```javascript
+npm install --save-dev hint@6.x
+```
+```javascript
+npx hint .
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- For tracking linter errors in CSS file run:
+```javascript
+npm install --save-dev stylelint@13.x stylelint-scss@3.x stylelint-config-standard@21.x stylelint-csstree-validator@1.x
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```javascript
+npx stylelint "**/*.{css,scss}"
+```
 
-## Learn More
+- For tracking linter errors in Javascript and React file run:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```javascript
+npm install --save-dev eslint@7.x eslint-config-airbnb-base@14.x eslint-plugin-import@2.x babel-eslint@10.x
+```
+```javascript
+npx eslint .
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Deployment
 
-### Code Splitting
+- Use GitHub pages to deploy website
+- For more information about publishing sources, see [About github pages](https://pages.github.com/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Authors
 
-### Analyzing the Bundle Size
+👤 **Rich Adu**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- GitHub: [assadounto](https://www.github.com/assadounto)
+- Twitter: [@adukyerer](https://www.twitter.com/adukyerer)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+👤 **Shubh M**
 
-### Advanced Configuration
+- GitHub: [@Shubh-Dev](https://github.com/Shubh-Dev) 
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/shubhscb/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 🤝 Contributing
 
-### Deployment
+Contributions, issues, and feature requests are welcome!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Feel free to check the [issues page](../../issues/).
 
-### `npm run build` fails to minify
+## Show your support
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Give a ⭐️ if you liked this project!
+
+## Acknowledgments
+
+- Microverse 
+- Coding Partners
+- Code Reviewers
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.

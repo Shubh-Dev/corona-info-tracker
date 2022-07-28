@@ -49,9 +49,15 @@
 
 .body-left {
   padding: 5px;
-
 }
 
 .color-white {
   color: white;
+}
+
+.back-btn {
+  cursor: pointer;
+  width: 1.5rem;
+  height: auto;
+  color: #fff;
 }

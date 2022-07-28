@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { generate } from 'randomized-string';
+// import { generate } from 'randomized-string';
 import { fetchCovidData } from '../redux/covidslice/covidSlice';
 import Covid from './Covid';
 import './CovidList.css';
@@ -38,8 +38,7 @@ const CovidList = () => {
            country, flag, cases,
         }) => (
           <Covid
-            key={generate()}
-            id={generate()}
+            // key={generate()}
             country={country}
             flag={flag}
             cases={cases}

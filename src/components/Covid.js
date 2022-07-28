@@ -7,29 +7,28 @@ import { BiRightArrowCircle } from 'react-icons/bi';
 
 const Covid = (props) => {
   const {
-    id, country, cases, flag,
+    country, cases, flag,
   } = props;
   return (
 
-    <div key={id} className="card-container">
-      {/* {console.log('test', { id })} */}
+    <div className="card-container">
       <div className="card">
         <div className="country-and-arrow">
           <div className="country-name-holder">
             <h2 className="country-name">{country}</h2>
           </div>
-          <NavLink to="/covidDetails/">
-            <BiRightArrowCircle className="arrow" key={id} />
+          <NavLink to={`/covidDetails/${country}`}>
+            <BiRightArrowCircle className="arrow" />
           </NavLink>
           {/* <AiOutlineArrowRight className="arrow" /> */}
         </div>
         <img className="flag" src={flag} alt="Flag" />
-        <p>
+        <p className="homepage-para">
           Country:
           {' '}
           {country}
         </p>
-        <p>
+        <p className="homepage-para">
           Cases:
           {' '}
           {cases}
@@ -40,7 +39,7 @@ const Covid = (props) => {
 };
 
 Covid.propTypes = {
-  id: PropTypes.string.isRequired,
+  // id: PropTypes.string.isRequired,
   country: PropTypes.string.isRequired,
   cases: PropTypes.number.isRequired,
   flag: PropTypes.string.isRequired,
