@@ -29,8 +29,8 @@ To get a local copy up and running follow these simple example steps.
 
 ## Setup
 ```javascript
- git clone git@github.com:assadounto/react-capstone.git
- cd awesome-books 
+ git clone git@github.com:Shubh-Dev/corona-info-tracker.git
+ cd corona-info-tracker 
  npm install 
  npm start 
 ```
@@ -73,13 +73,7 @@ npx eslint .
 - Use GitHub pages to deploy website
 - For more information about publishing sources, see [About github pages](https://pages.github.com/)
 
-## Authors
-
-👤 **Rich Adu**
-
-- GitHub: [assadounto](https://www.github.com/assadounto)
-- Twitter: [@adukyerer](https://www.twitter.com/adukyerer)
-
+## Author
 
 👤 **Shubh M**
 
