@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import './Covid.css';
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
@@ -6,21 +7,22 @@ import { generate } from 'randomized-string';
 import { AiOutlineArrowRight } from 'react-icons/ai';
 import { fetchCovidData } from '../redux/covidslice/covidSlice';
 
+
 const Covid = (props) => {
   const {
     id, country, population, cases, flag, deaths, continent,
   } = props;
-  const dispatch = useDispatch();
-  const handleClick = () => {
-    console.log('clicked');
-  };
+  // const dispatch = useDispatch();
+  // const handleClick = () => {
+  //   console.log('clicked');
+  // };
 
   return (
     <div key={id} className="card-container">
       <div className="card">
         <div className="country-and-arrow">
           <h2 className="country-name">{country}</h2>
-          <AiOutlineArrowRight className="arrow" onClick={handleClick} />
+           <AiOutlineArrowRight className="arrow" />
         </div>
         <img className="flag" src={flag} alt="Flag" />
         <p>
