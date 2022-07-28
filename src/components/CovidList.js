@@ -23,7 +23,7 @@ const CovidList = () => {
         <input
           className="searchbar"
           type="searchbar"
-          placeholder="Search by countyr name.."
+          placeholder="Search by country name.."
           onChange={(event) => { setSearchTerm(event.target.value); }}
         />
       </header>
