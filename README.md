@@ -8,7 +8,7 @@ This is react app that allows users to get get information of Covid-19 disease f
 
 [Link](https://cheery-concha-41a565.netlify.app)
 
-[Demo by Author](https://cheery-concha-41a565.netlify.app)
+[Demo by Author](https://www.loom.com/share/985542774e47496182c2971e742ae7cc)
 
 <!-- ![screenshot](./desktop.png) -->
 
