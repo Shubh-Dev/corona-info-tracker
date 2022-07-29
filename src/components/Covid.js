@@ -20,7 +20,6 @@ const Covid = (props) => {
           <NavLink to={`/covidDetails/${country}`}>
             <BiRightArrowCircle className="arrow" />
           </NavLink>
-          {/* <AiOutlineArrowRight className="arrow" /> */}
         </div>
         <img className="flag" src={flag} alt="Flag" />
         <p className="homepage-para">

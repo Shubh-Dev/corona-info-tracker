@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CovidList render correctly 1`] = `
+<div
+  className="container"
+>
+  <header
+    className="header"
+  >
+    <h1
+      className="main-headline"
+    >
+      Covid 19 Statistics
+    </h1>
+    <input
+      className="searchbar"
+      onChange={[Function]}
+      placeholder="Search by country name.."
+      type="searchbar"
+    />
+  </header>
+  <div
+    className="main-container"
+  />
+</div>
+`;
