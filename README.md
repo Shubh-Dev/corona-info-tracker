@@ -6,7 +6,9 @@ This is react app that allows users to get get information of Covid-19 disease f
 
 ### Deploy
 
-[Link]()
+[Link](https://cheery-concha-41a565.netlify.app)
+
+[Demo by Author](https://cheery-concha-41a565.netlify.app)
 
 <!-- ![screenshot](./desktop.png) -->
 
