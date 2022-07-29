@@ -1,0 +1,40 @@
+.main-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  color: #fff;
+}
+
+.main-headline {
+  font-size: 25px;
+  font-family:
+    Roboto,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    'Oxygen',
+    'Ubuntu',
+    'Cantarell',
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif;
+  margin-left: 1rem;
+  color: #fff;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.searchbar {
+  width: 10rem;
+  height: 25px;
+  border: none;
+  border-radius: 5px;
+  margin: auto 10px auto 10px;
+}
+
+.container {
+  padding-right: 10px;
+}
